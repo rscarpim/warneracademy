@@ -1,0 +1,162 @@
+{% if FUserLogado() %}
+
+    <input type="hidden" id="usuID" value="{{ FUserData().usu_id }}"/>
+
+{% endif %}
+
+
+<div class="navbar-fixed">   
+    
+    <nav class="gradient-45deg-deep-grey">        
+
+        <div class="container">
+
+            <div class="nav-wrapper">
+
+                <a href="#" data-target="mobile" class="sidenav-trigger">
+                    <i class="material-icons">menu</i>
+                </a>
+
+                
+
+                <ul class="hide-on-med-and-down">
+
+                    <li>
+
+                        <a class="flow-text white-text" href="/">WAC</a>
+                    </li>
+                    
+
+                    <li>
+                        <a class="grey-text" href="/">Home</a>
+                    </li>
+
+          
+
+                    <!-- IF is Logedin -->
+                    {% if FUserLogado() %}
+
+                        <!-- Administrator -->
+                        {% if FUserData().usu_level_id == 1  %}                              
+
+                            <li class="right">
+                            
+                                <a class="text-background" href="/Dashboard">My Dashboard <i class="material-icons right">dashboard</i></a>
+                            </li>
+
+                        <!-- Student -->
+                        {% elseif FUserData().usu_level_id == 2 %}
+                         
+
+                            <li class="right">
+                            
+                                <a class='dropdown-trigger' href='#' data-target='profile-dropdown'>
+                            
+                                    <span 
+                                        class="avatar-status avatar-online center">{{FUserData().usu_initial}}
+                                        {% if ArrNotifications[0].TotalNotifications != 0 %}
+                                            <small class="notification-badge">{{ArrNotifications[0].TotalNotifications}}</small>
+                                        {% endif %}
+                                    </span>
+                                </a>
+                            </li>                          
+
+
+                            
+
+
+                        <!-- Instructor -->
+                        {% elseif FUserData().usu_level_id == 3 %}
+
+                            <li class="right">
+
+                                <a class="text-background" href="/Dashboard">My Dashboard <i class="material-icons right">dashboard</i></a>
+                            </li>
+
+
+                            
+
+                            
+                        {% endif %}                     
+ 
+                        
+                        <li>
+                        
+                            <a class="grey-text btn-logout" href="/Registration/logout">Logout
+                                <i class="material-icons right">lock_open</i>
+                            </a>
+                        </li>
+                        
+                    {% else %}
+                        
+                        <li>
+                            <a href="/Registration">Login | Registration</a>
+                        </li>
+
+                    {% endif %}
+                </ul>               
+            </div>
+        </div>
+    </nav>
+</div>
+
+
+
+<!-- Dropdown Structure User Profile -->
+<ul id='profile-dropdown' class='dropdown-content'>
+
+    <li>
+        <a href="">
+
+            <a class="grey-text" href="/Profile">
+                <i class="material-icons green lighten-3">dashboard</i>{{ FUserData().usu_name_first|capitalize }} {{ FUserData().usu_name_last|capitalize}}</a>
+
+            <span class="black-text center">{{ FUserData().usu_login}}</span>
+        </a>
+    </li>
+
+
+    <li class="divider"></li>
+    <li>
+
+        <a class="grey-text btn-logout" href="/Registration/logout">
+            <i class="material-icons">lock_open</i>Logout</a>
+    </li>
+
+</ul>
+
+
+
+<ul class="sidenav" id="mobile">
+
+    <li>
+        <a href="/">
+            <i class="material-icons grey-text">home</i>Home</a>
+    </li>
+
+    <!-- Mostrar o Icone de Logar do Usuario se estiver Logado.  -->
+    {% if FUserLogado() %}
+
+        <li>
+
+            <a class="grey-text" href="/Profile">
+                <i class="material-icons">dashboard</i>{{ FUserData().usu_name_first|capitalize }} {{ FUserData().usu_name_last|capitalize}}</a>
+        </li>
+
+        <li>
+            <a class="grey-text" href="#">
+                <i class="material-icons">message</i>My Messages</a>
+        </li>
+
+        <li>
+            <a href="/Registration/logout" style="margin-top: 12px;">
+                <i class="material-icons grey-text">lock_open</i>Logout</a>
+        </li>
+
+    {% else %}
+
+        <li>
+            <a href="/Registration">Login | Registration</a>
+        </li>
+    {% endif %}
+</ul>

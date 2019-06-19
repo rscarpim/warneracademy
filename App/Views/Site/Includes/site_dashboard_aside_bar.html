@@ -1,0 +1,73 @@
+<aside id="left-sidebar-nav" class="nav-expanded nav-lock nav-collapsible hide-on-med-and-down">
+
+    <div class="brand-sidebar z-depth-0">
+
+        <h4 class="logo-wrapper center" style="font-size: 18px;"><strong class="green-text">W</strong><strong>arner</strong><strong class="green-text">Ac</strong><strong>ademy</strong></h4>
+    </div>
+
+    <ul id="slide-out" class="z-depth-1 side-nav fixed leftside-navigation ps-container ps-active-y">
+
+        <!-- Student Section -->
+        {% if FUserData().usu_level_id == 2 %}
+        
+        
+        
+        
+        {% endif %}
+
+
+
+
+
+
+
+        <!-- Instructor Section  -->
+        {% if FUserData().usu_level_id == 3 or FUserData().usu_level_id == 1 %}
+
+            <ul class="collapsible collapsible-accordion">
+
+                <li>
+                    
+                    <a class="black-text" href="/MyProfile"><i class="material-icons orange-text">account_box</i>My Profile</a>
+                </li>
+                
+
+                <li>
+
+                    <a class="collapsible-header waves-effect waves-blue z-depth-0">
+                
+                        <i class="material-icons orange-text">contacts</i>Instructor<i class="material-icons right">arrow_drop_down</i>
+                    </a>
+                
+                    <div class="collapsible-body z-depth-0">
+                        <ul>
+
+                            <a class="collapsible-header waves-effect waves-blue z-depth-0">
+                            
+                                <i class="material-icons orange-text">contacts</i>My Courses<i class="material-icons right">arrow_drop_down</i>
+                            </a>
+
+
+                            <li><a class="waves-effect waves-blue" href="/MyCourses">Courses List</a></li>
+                            <li><a class="waves-effect waves-blue" href="/MyCoursesNew">New Course</a></li>
+                            <li><a class="waves-effect waves-blue" href="/MyCoursesCategoriesList">Categories List</a></li>
+                            <li><a class="waves-effect waves-blue" href="#">Sub-Categories</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+
+
+
+                {% if FUserData().usu_level_id == 1 %}
+                    <li><a class="black-text" href=""><i class="material-icons orange-text">supervisor_account</i>My Students</a></li>
+                {% endif %}
+            </ul>
+        
+
+
+        {% endif %}
+
+        <li><a href="#"><i class="material-icons orange-text">lock</i>Logout</a></li>        
+    </ul>
+</aside>

@@ -1,0 +1,49 @@
+{% extends 'site_layout.html' %} 
+
+{% block head %} 
+
+    {{ parent() }}
+    
+        <link rel="stylesheet" type="text/css" href="{{ site_url() }}/assets/css/Admin/StudentsList.css"> 
+{% endblock %} 
+
+
+{% block site_content %}
+
+
+    <div class="container">
+
+        <div class="col l6 left">
+
+            <h5 class="grey-text" id="txtTitle">List of Users.</h5>
+        </div>
+
+        <div class="row">
+        
+        
+            <table id="TblUsers" class="responsive-table display dataTable" style="width:100%">
+        
+                <thead class=" gradient-45deg-deep-grey">
+                    <tr>
+        
+                        <th class="center" width="10%">Status</th>
+                        <th width="30%">Login</th>
+                        <th width="20%">User Name</th>
+                        <th class="center" width="20%">User Level</th>
+                        <th class="center" width="10%"></th>
+                        <th class="center" width="10%"></th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+
+
+{% endblock %}
+
+{% block footer %}
+
+    {{ parent() }}
+
+    <script src="{{ site_url() }}/assets/js/Admin/StudentsList.js"></script> 
+{% endblock %}

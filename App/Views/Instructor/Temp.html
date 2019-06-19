@@ -1,0 +1,250 @@
+{% extends 'site_dashboard.html' %}
+
+{% block head %}
+
+{{ parent() }}
+<link rel="stylesheet" type="text/css" href="{{ site_url() }}/assets/css/Instructors/MyCoursesNew.css">
+
+{% endblock %}
+{% block site_content %}
+
+
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col l12">
+
+            <h5 class="grey-text right" id="txtTitle">Create a New Course</h5>
+        </div>
+    </div>
+
+    <div class="col s12 m12 l12">
+
+        <div class="row">
+
+            <ul class="collection z-depth-0 gradient-45deg-deep-grey section scrollspy" id="div-profile">
+
+                <h6 class="txt-title green-text"><strong>Course</strong> - Course Info.</h6>
+            </ul>
+
+
+
+            <form action="" method="POST">
+
+
+                <div class="row">
+
+                    <div class="input-field col l10">
+
+                        <i class="material-icons prefix">apps</i>
+                        <input id="cour_title" name="cour_title" type="text" class="validate" autocomplete="off">
+                        <label for="cour_title">New Course Title</label>
+
+                        {{ errorField('cour_title') | raw }}
+                    </div>
+
+                    <div class="input-field col l2">
+
+                        <input type="text" name="cour_created_at" class="validadte" disabled>
+                        <label for="cour_title">Created @</label>
+                    </div>
+                </div>
+
+
+
+                <div class="row" style="padding-top:12px;">
+
+                    <div class="input-field col l3">
+
+                        <i class="material-icons prefix">featured_play_list</i>
+                        <input id="cour_slug" name="cour_slug" type="text" class="validate" autocomplete="off" value="course-">
+                        <label for="cour_slug">Slug</label>
+                    </div>
+
+
+                    <div class="input-field col l3">
+
+                        <i class="material-icons prefix">collections_bookmark</i>
+                        <input type="text" id="cour_level" class="autocomplete">
+                        <label for="cour_level">Course Level</label>
+                    </div>
+
+
+                    <div class="input-field col l3">
+
+                        <i class="material-icons prefix">collections_bookmark</i>
+                        <input type="text" id="cour_status" class="autocomplete">
+                        <label for="cour_status">Course Status</label>
+                    </div>
+
+
+                    <div class="input-field col l2 right">
+
+                        <label>
+                            <input type="checkbox" class="filled-in" name="cour_is_featured" />
+                            <span>is Featured</span>
+                        </label>
+                    </div>
+                </div>
+
+
+
+                <div class="row">
+
+                    <div class="col l6">
+
+                        <label>Select Course Category</label>
+                        <select class="browser-default" id="cour_cat_id" name="cour_cat_id">
+                            <option value="" disabled selected>Choose your option</option>
+                        </select>
+                    </div>
+
+
+                    <div class="col l4">
+
+                        <label>Select Course Sub-Category</label>
+                        <select class="browser-default " id="cour_sub_category_id" name="cour_sub_category_id" disabled>
+                            <option value="" disabled selected>Choose your option</option>
+                        </select>
+                    </div>
+                </div>
+
+
+
+                <div class="row">
+
+                    <div class="input-field col l8">
+                        <i class="material-icons prefix">insert_link</i>
+                        <input type="text" class="autocomplete" id="cour_link_name" name="cour_link_name">
+                        <label for="cour_link_name">New Link name <span class="red-text" style="font-size: 10px;">(AutoComplete)</span></label>
+                    </div>
+                </div>
+
+
+                <div class="row">
+
+                    <div class="input-field col l8">
+
+                        <i class="material-icons prefix">insert_link</i>
+                        <input type="text" id="cour_sub_link_name" class="autocomplete">
+                        <label for="cour_sub_link_name">New Sub-Link name <span class="red-text" style="font-size: 10px;">
+                                (AutoComplete)</span></label>
+                        <span id="span-msg-available"></span>
+                    </div>
+                </div>
+
+
+
+                <div class="row">
+
+                    <div class="input-field col l3">
+
+                        <i class="material-icons prefix">dns</i>
+                        <input type="number" id="cour_lectures" name="cour_lectures" class="input-numbers" min="0" max="999"
+                            autocomplete="off">
+                        <label for="cour_lectures">Number Lectures <span class="red-text" style=" font-size: 10px;">
+                                (Total
+                                000)</span></label>
+                    </div>
+
+
+                    <div class="input-field col l2">
+
+                        <i class="material-icons prefix">attach_money</i>
+                        <input type="text" id="cour_price" name="cour_price" class="input-money">
+                        <label for="cour_price">Price</label>
+                    </div>
+
+
+                    <div class="input-field col l2">
+
+                        <i class="material-icons prefix">money_off</i>
+                        <input type="number" id="cour_reduced_price_percent" name="cour_reduced_price_percent" class="input-numbers"
+                            min="0" max="999">
+                        <label for="cour_reduced_price_percent">% Reduced <span class="red-text" style="font-size: 10px;">
+                                (Number 000)</span></label>
+                    </div>
+
+
+                    <div class="input-field col l2">
+
+                        <i class="material-icons prefix">attach_money</i>
+                        <input disabled type="text" id="cour_reduced_price" name="cour_reduced_price" class="input-money">
+                        <label for="cour_reduced_price">Reduced Price</label>
+                    </div>
+
+
+                    <div class="input-field col l3">
+
+                        <i class="class material-icons prefix">date_range</i>
+                        <input type="number" id="cour_promo_expire" name="cour_promo_expire" class="input-numbers" min="0"
+                            max="999" autocomplete="off">
+                        <label for="cour_promo_expire">Reduced Expires <span class="red-text" style="font-size: 10px;">
+                                (Days
+                                000)</span></label>
+                    </div>
+                </div>
+
+
+                <div class="row">
+
+                    <div class="input-field col l11" style="padding-left: 22px;">
+                        <span class="grey-text">Course Description</span>
+                        <textarea id="txtCourseDesc" name="txtCourseDesc" class="ckeditor" height="300px"></textarea>
+                    </div>
+                </div>
+
+
+                <div class="row">
+
+                    <div class="input-field col l11" style="padding-left: 22px;">
+                        <span class="grey-text">What Will I Learn?</span>
+                        <textarea id="txtLearnDesc" name="txtLearnDesc" class="ckeditor" height="300px"></textarea>
+                    </div>
+                </div>
+
+
+                <div class="row">
+
+                    <div class="input-field col l11" style="padding-left: 22px;">
+                        <span class="grey-text">Requirements</span>
+                        <textarea id="txtRequirementDesc" name="txtRequirementDesc" class="ckeditor" height="200px"></textarea>
+                    </div>
+                </div>
+
+
+                <div class="fixed-action-btn">
+                    <button class="btn-floating btn-large red" name="btnSave" id="btnSave">
+                        <i class="large material-icons">save</i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}
+{% block footer %}
+
+{{ parent() }}
+
+<script src="{{ site_url() }}/assets/js/Instructors/inst_MyCoursesNew.js"></script>
+
+<script src="https://cdn.ckeditor.com/4.10.0/standard/ckeditor.js"></script>
+
+<script type="text/javascript">
+
+    CKEDITOR.replace('txtCourseDesc');
+    CKEDITOR.add
+
+    CKEDITOR.replace('txtLearnDesc');
+    CKEDITOR.add
+
+    CKEDITOR.replace('txtRequirementDesc');
+    CKEDITOR.add
+</script>
+{% endblock %}

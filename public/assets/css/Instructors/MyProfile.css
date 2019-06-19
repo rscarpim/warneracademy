@@ -1,0 +1,108 @@
+
+.section {
+    padding-top: 0rem;
+    padding-bottom: 1rem;
+}
+
+.brand-logo {
+    color: #fff !important;
+}
+
+.input-field input:focus + label {
+   color: #505763 !important;
+ } 
+
+.row .input-field input:focus {
+   border-bottom: 1px solid #505763 !important;
+   box-shadow: 0 1px 0 0 #505763 !important
+ }
+
+ .row {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0px;
+}
+
+
+
+
+.chip {
+    display: inline-block;
+    height: 32px;
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(0,0,0,0.6);
+    line-height: 32px;
+    padding: 0 12px;
+    border-radius: 16px;
+    background-color: #e4e4e4;
+    margin-bottom: 5px;
+    margin-right: 5px;
+}
+
+.chips .input {
+    background: none;
+    border: 0;
+    color: rgba(0,0,0,0.6);
+    display: inline-block;
+    font-size: 16px;
+    height: 3rem;
+    line-height: 32px;
+    outline: 0;
+    margin: 0;
+    padding: 0 !important;
+}
+
+.btn, .btn-large, .btn-flat {
+    border: none;
+    min-width: 100px;
+    border-radius: 4px;
+    display: inline-block;
+    height: 26px;
+    line-height: 26px;
+    padding: 0 2rem;
+    text-transform: uppercase;
+    vertical-align: middle;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.txtOcupation{
+    font-style: italic;
+    font-size: 12px;
+    margin-top: -18px;
+}
+
+.txtUserName{
+    font-weight: bold;
+}
+
+.txt-title{
+    margin-left: 18px;
+}
+
+.mini-text{
+    font-size: 10px;
+    color: red;
+}
+
+.border-round {
+    border-radius: 50px !important;
+}
+
+.gradient-45deg-deep-grey {
+    background: #8e24aa;
+    /* background: -webkit-linear-gradient(45deg, #8e24aa 0%, #ff6e40 100%); */
+    background: -webkit-linear-gradient(45deg, white 0%, #ff6e40 100%);
+    /* background: linear-gradient(45deg, #8e24aa 0%, #ff6e40 100%); */
+    background: linear-gradient(45deg, white 0%, grey 100%);
+}
+.gradient-45deg-green-teal {
+    background: #43A047;
+    background: -webkit-linear-gradient(45deg, #43A047 0%, #1de9b6 100%);
+    background: linear-gradient(45deg, #43A047 0%, #1de9b6 100%);
+}
+.gradient-45deg-amber-amber {
+    background: #ff6f00;
+    background: -webkit-linear-gradient(45deg, #ff6f00 0%, #ffca28 100%);
+    background: linear-gradient(45deg, #ff6f00 0%, #ffca28 100%);
+}

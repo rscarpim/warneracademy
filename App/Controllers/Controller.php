@@ -1,0 +1,65 @@
+<?php 
+
+namespace App\Controllers;
+
+use App\Classes\Uri;
+
+
+/**
+* 
+*/
+class Controller
+{
+
+	
+	private $uri;
+
+	/* Definindo as Constantes. */
+	const NAMESPACE_CONTROLLER 	= '\\App\\Controllers\\';
+
+	const FOLDERS_CONTROLLER 	= ['Admin', 'Site', 'Users', 'Instructors'];
+
+	const ERROR_CONTROLLER 		= '\\App\\Controllers\\Erro\\ErroController';
+
+	
+
+
+	/* Ao Instanciar esta Classe Chamar a Funcao de Uri. */
+	public function __construct(){
+
+		$this->uri = new Uri;
+	}
+
+
+
+	/* Pegando o Valor na Uri. */
+    private function getController(){
+
+        if(!$this->uri->emptyUri()){
+
+            $explodeUri = array_filter(explode('/', $this->uri->getUri()));           
+
+            return ucfirst($explodeUri[1]) . 'Controller';
+        }
+        return ucfirst(DEFAULT_CONTROLLER) . 'Controller';
+    }	
+
+
+
+    /*  */
+    public function controller(){
+
+        $controller = $this->getController();
+
+        
+        foreach(self::FOLDERS_CONTROLLER as $folderController){
+
+
+            if(class_exists(self::NAMESPACE_CONTROLLER . $folderController . '\\' . $controller)){                
+
+                return self::NAMESPACE_CONTROLLER . $folderController . '\\' . $controller;
+            }
+        }
+        return self::ERROR_CONTROLLER;
+    }    
+}

@@ -1,0 +1,195 @@
+nav{
+    background-color: #505763;
+}
+
+nav .brand-logo {
+    position: absolute;
+    color: #fff;
+    display: inline-block;
+    font-size: 2.1rem;
+    padding: 0px 16px;
+}
+
+ul .li-menu{
+    height: 40px;
+    padding: 0 10px;
+    font-size: 16px;
+    font-family: 'Arial';
+}
+table tbody td {
+	font-family: Tahoma;
+	font-size: 12px;
+}
+td, th {
+    padding: 5px 5px;
+    display: table-cell;
+    text-align: left;
+    vertical-align: middle;
+    border-radius: 2px;
+}
+
+.section {
+    padding-top: 0rem;
+    padding-bottom: 1rem;
+}
+
+.brand-logo {
+    color: #fff !important;
+}
+
+.input-field input:focus + label {
+   color: #505763 !important;
+ } 
+
+.row .input-field input:focus {
+   border-bottom: 1px solid #505763 !important;
+   box-shadow: 0 1px 0 0 #505763 !important
+ }
+
+.avatar-status-student {
+    margin-top: 15px;
+    margin:15px auto;
+
+    position: relative;
+    display: table;
+    line-height: 100px;
+    
+    white-space: nowrap;
+    vertical-align: center;
+
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #C9CBCF;
+    color: black;
+
+    font-size: 36px;
+    background-color: #fff;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100%;
+}
+
+.avatar-status {
+    margin-top: 5px;
+    margin-bottom: 4px;
+    position: relative;
+    display: inline-block;
+    line-height: 50px;
+    width: 46px;
+    white-space: nowrap;
+    vertical-align: bottom;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 1px;
+    color: #686f7a;
+    font-size: 15px;
+    background-color: #e0e0e0   ;
+}
+
+.notification-badge {
+    font-family: "Rubik", sans-serif;
+    position: relative;
+    right: -5px;
+    top: -20px;
+    color: #ffffff;
+    background-color: #ab47bc;
+    margin: 0 -.8em;
+    border-radius: 50%;
+    padding: 2px 5px;
+}
+
+.chip {
+    display: inline-block;
+    height: 32px;
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(0,0,0,0.6);
+    line-height: 32px;
+    padding: 0 12px;
+    border-radius: 16px;
+    background-color: #e4e4e4;
+    margin-bottom: 5px;
+    margin-right: 5px;
+}
+
+.chips .input {
+    background: none;
+    border: 0;
+    color: rgba(0,0,0,0.6);
+    display: inline-block;
+    font-size: 16px;
+    height: 3rem;
+    line-height: 32px;
+    outline: 0;
+    margin: 0;
+    padding: 0 !important;
+}
+
+.btn, .btn-large, .btn-flat {
+    border: none;
+    min-width: 100px;
+    border-radius: 4px;
+    display: inline-block;
+    height: 26px;
+    line-height: 26px;
+    padding: 0 2rem;
+    text-transform: uppercase;
+    vertical-align: middle;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.txtOcupation{
+    font-style: italic;
+    font-size: 12px;
+    margin-top: -18px;
+}
+
+.txtUserName{
+    font-weight: bold;
+}
+
+.txt-title{
+    margin-left: 18px;
+}
+
+.mini-text{
+    font-size: 10px;
+    color: red;
+}
+
+.border-round {
+    border-radius: 50px !important;
+}
+
+.gradient-45deg-deep-grey {
+    background: #8e24aa;
+    /* background: -webkit-linear-gradient(45deg, #8e24aa 0%, #ff6e40 100%); */
+    background: -webkit-linear-gradient(45deg, white 0%, #ff6e40 100%);
+    /* background: linear-gradient(45deg, #8e24aa 0%, #ff6e40 100%); */
+    background: linear-gradient(45deg, white 0%, grey 100%);
+}
+.gradient-45deg-green-teal {
+    background: #43A047;
+    background: -webkit-linear-gradient(45deg, #43A047 0%, #1de9b6 100%);
+    background: linear-gradient(45deg, #43A047 0%, #1de9b6 100%);
+}
+.gradient-45deg-amber-amber {
+    background: #ff6f00;
+    background: -webkit-linear-gradient(45deg, #ff6f00 0%, #ffca28 100%);
+    background: linear-gradient(45deg, #ff6f00 0%, #ffca28 100%);
+}
+
+
+
+#div-sidebar{
+    margin-top: 0;
+    min-height: 650px;
+    width: 190px;
+}
+
+#msg-pass-match
+{
+    font-size: 12px;
+}

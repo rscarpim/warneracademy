@@ -1,0 +1,22 @@
+{
+    "require": {
+        "symfony/var-dumper": "^4.0",
+        "twig/twig": "^2.4",
+        "php-activerecord/php-activerecord": "^1.2",
+        "phpmailer/phpmailer": "^6.0",
+        "intervention/image": "^2.4",
+        "tinymce/tinymce": "^4.7",
+        "desandro/masonry": "^4.2",
+        "sendgrid/sendgrid": "^7.2"
+    },
+    "autoload":{
+    	"psr-4":{
+    		"App\\Controllers\\":"App/Controllers",
+    		"App\\Models\\":"App/Models",
+    		"App\\Interfaces\\":"App/Interfaces",
+    		"App\\Repositories\\":"App/Repositories",
+    		"App\\Classes\\":"App/Classes",
+            "App\\Traits\\":"App/Traits"
+    	}
+    }
+}

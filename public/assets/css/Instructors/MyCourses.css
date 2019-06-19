@@ -1,0 +1,42 @@
+
+
+
+.txtTitle{
+    margin-left: 12px;
+}
+
+
+.input-field input:focus + label {
+   color: black !important;
+ }
+
+ .input-field .prefix.active{
+     color: black;
+ }
+
+ 
+ .row .input-field input:focus {
+   border-bottom: 1px solid black !important;
+   box-shadow: 0 1px 0 0 black !important
+ }
+
+.btn, .btn-large, .btn-flat {
+    border: none;
+    border-radius: 4px;
+    display: inline-block;
+    height: 26px;
+    line-height: 26px;
+    padding: 0 2rem;
+    text-transform: uppercase;
+    vertical-align: middle;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.gradient-45deg-amber-amber.gradient-shadow {
+    box-shadow: 0 6px 20px 0 rgba(255, 111, 0, 0.3);
+}
+.gradient-45deg-amber-amber {
+    background: #ff6f00;
+    background: -webkit-linear-gradient(45deg, #ff6f00 0%, #ffca28 100%);
+    background: linear-gradient(45deg, #ff6f00 0%, #ffca28 100%);
+}

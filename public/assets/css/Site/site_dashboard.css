@@ -1,0 +1,210 @@
+main{
+    padding-top: 22px;
+}
+
+.navbar-fixed nav {
+      box-shadow: none;
+      height: 80px;
+}
+.navbar-fixed nav:hover {
+  	background-color: white !important;
+}
+
+nav ul a:hover {
+    background-color: transparent !important;
+}
+.brand-logo{
+    color: #333 !important;	
+    font-size: 15px;
+}
+
+
+
+
+
+
+
+ul.side-nav.leftside-navigation li:not(.no-padding) a {
+    font-family: "Rubik", sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    white-space: nowrap;
+}
+
+.side-nav .collapsible-header, .side-nav.fixed .collapsible-header {
+    background-color: transparent;
+    border: none;
+    line-height: inherit;
+    height: inherit;
+    padding: 0 16px;
+}
+
+ul.side-nav .collapsible-header {
+    margin: 0;
+    font-weight: 500;
+}
+
+.side-nav li > a {
+    padding: 0 16px !important;
+}
+
+.side-nav li > a {
+    color: rgba(0, 0, 0, 0.87);
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    height: 48px;
+    line-height: 48px;
+    padding: 0 32px;
+}
+
+#slide-out li a i {
+    line-height: inherit;
+    width: 2rem;
+    font-size: 1.4rem;
+    display: block;
+    float: left;
+    text-align: center;
+    margin-right: 1rem;
+}
+
+.nav-expanded .side-nav .nav-text {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.2s linear;
+}
+
+
+
+
+
+
+.gradient-45deg-deep-grey {
+    background: #8e24aa;   
+    background: -webkit-linear-gradient(45deg, white 0%, #ff6e40 100%);    
+    background: linear-gradient(45deg, white 0%, grey 100%);
+}
+
+.gradient-45deg-amber-amber.gradient-shadow {
+    box-shadow: 0 6px 20px 0 rgba(255, 111, 0, 0.3);
+}
+.gradient-45deg-amber-amber {
+    background: #ff6f00;
+    background: -webkit-linear-gradient(45deg, #ff6f00 0%, #ffca28 100%);
+    background: linear-gradient(45deg, #ff6f00 0%, #ffca28 100%);
+}
+.gradient-45deg-green-teal {
+    background: #43A047;
+    background: -webkit-linear-gradient(45deg, #43A047 0%, #1de9b6 100%);
+    background: linear-gradient(45deg, #43A047 0%, #1de9b6 100%);
+}
+.gradient-45deg-cyan-light-green {
+    background: #00e5ff;
+    background: -webkit-linear-gradient(45deg, #00e5ff 0%, #ccff90 100%);
+    background: linear-gradient(45deg, #00e5ff 0%, #ccff90 100%);
+}
+
+.gradient-45deg-cyan-light-green {
+    background: #0097a7;
+    background: -webkit-linear-gradient(45deg, #0097a7 0%, #b2ff59 100%);
+    background: linear-gradient(45deg, #0097a7 0%, #b2ff59 100%);
+}
+.gradient-45deg-purple-deep-orange.gradient-shadow {
+    box-shadow: 0 6px 20px 0 rgba(255, 110, 64, 0.5);
+}
+.gradient-45deg-purple-deep-orange {
+    background: #8e24aa;
+    background: -webkit-linear-gradient(45deg, #8e24aa 0%, #ff6e40 100%);
+    background: linear-gradient(45deg, #8e24aa 0%, #ff6e40 100%);
+}
+
+
+.text-background{
+  background: inherit;
+  background-clip: text;
+  color: transparent;
+  filter: invert(1) grayscale(2) contrast(9);   
+}
+
+
+
+/* LEFT SIDE NAV*/
+#left-sidebar-nav {
+    position: fixed;
+    width: 100px;
+    left: 180px;
+    z-index: 999;
+    height: auto;
+}
+
+.brand-sidebar {
+    position: fixed;
+    left: 0;
+    width: 240px;
+    top: 0px;
+    z-index: 9;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+    -webkit-transition: .3s ease all;
+    -o-transition: .3s ease all;
+    -moz-transition: .3s ease all;
+    transition: .3s ease all;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.brand-sidebar .logo-wrapper {
+    font-size: 36px;
+    padding: 0px 18px;
+    white-space: nowrap;
+    line-height: 17px !important;
+}
+.h1.logo-wrapper {
+    margin: 0;
+}
+
+ul.side-nav.leftside-navigation {
+    top: 64px;
+    overflow: hidden;
+    height: 100%;
+}
+
+.side-nav.fixed {
+    left: 0;
+    transform: translateX(0);
+    position: fixed;
+}
+ul:not(.browser-default) {
+    padding-left: 0;
+    list-style-type: none;
+}
+
+ul.side-nav.leftside-navigation li:not(.no-padding) {
+    line-height: 44px;
+    padding-left: 18px;    
+    width: 240px;
+}
+
+.side-nav .collapsible li, .side-nav.fixed .collapsible li {
+    padding: 0;
+}
+
+
+a {
+    color: black;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+ul.side-nav.leftside-navigation li:not(.no-padding):hover {
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+ul.side-nav.leftside-navigation li a:hover{
+    cursor: pointer;
+}
+
+.disableObj {
+    pointer-events: none;
+    cursor: default;
+} 

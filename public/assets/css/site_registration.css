@@ -1,0 +1,53 @@
+span{
+    font-size: 12px;
+}
+
+#card-alert i {
+    font-size: 20px;
+    position: relative;
+    top: 5px;
+}
+
+
+
+
+.login-form-text {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1.4rem;
+}
+
+/* label focus color */
+ .input-field input:focus + label {
+   color: black !important;
+ }
+ /* label underline focus color */
+ .row .input-field input:focus {
+   border-bottom: 1px solid black !important;
+   box-shadow: 0 1px 0 0 black !important
+ }
+
+.white-button{
+	height: 63px;
+	font-family: "Frutiger Roman",sans-serif;
+	background-color: white;
+	color: black;
+	text-transform: uppercase;
+}
+.white-button:hover {
+    background-color: transparent;
+    color: red;
+}
+
+.gradient-grey {
+    background: #8e24aa;
+    /* background: -webkit-linear-gradient(45deg, #8e24aa 0%, #ff6e40 100%); */
+    background: -webkit-linear-gradient(45deg, white 0%, #ff6e40 100%);
+    /* background: linear-gradient(45deg, #8e24aa 0%, #ff6e40 100%); */
+    background: linear-gradient(45deg, white 0%, grey 100%);
+}
+.gradient-45deg-purple-deep-orange {
+    background: #8e24aa;
+    background: -webkit-linear-gradient(45deg, #8e24aa 0%, #ff6e40 100%);
+    background: linear-gradient(45deg, #8e24aa 0%, #ff6e40 100%);
+}

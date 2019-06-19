@@ -1,0 +1,319 @@
+{% extends 'site_layout.html' %} 
+
+{% block head %} 
+    
+    {{ parent() }}
+    <link rel="stylesheet" type="text/css" href="{{ site_url() }}/assets/css/Users/user_profile.css"> 
+{% endblock %} 
+
+{% block site_content %}
+
+
+
+<div class="row">
+
+    <div class="col s12 m12 l3" >
+
+        <ul class="collection z-depth-0">
+
+            <li class="collection-item">
+
+                <div class="row">
+
+                    <div class="col s12 center">
+
+                        <span class="avatar-status-student avatar-online center responsive-img">{{ user.usu_initial }}</span>
+                    </div>
+                </div>
+
+                
+                <div class="row">
+
+                    <div class="col s12 center">
+                        
+                        {{ user.usu_name_first | capitalize }} {{ user.usu_name_last | capitalize }}
+                    </div>
+                </div>                
+            </li>
+
+            <li class="collection-item">
+
+                <div class="row">
+
+                    <div class="col s5">
+
+                        <i class="material-icons left">language</i>Language                        
+                    </div>
+                    <div class="col s7 right-align">{{ user.lan_description }}</div>
+                </div>
+            </li>
+
+            <li class="collection-item">
+            
+                <div class="row">
+            
+                    <div class="col s5">
+            
+                        <i class="material-icons left">work</i>Professional
+                    </div>
+                    <div class="col s7 right-align">{{ user.prof_description }}</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+
+    <div class="col s12 m12 l7">
+
+        <div class="row">
+        
+            <ul class="collection z-depth-0 gradient-45deg-deep-grey section scrollspy" id="div-profile">
+        
+                <h6 class="txt-title green-text">Profile - Add information about yourself.</h6>
+            </ul>
+
+
+            <div class="row">            
+            
+                <form class="col s12 l11 offset-l1" method="POST" action="Profile/SaveProfile">
+            
+                    <input type="hidden" name="usu_id" id="usu_id" value="{{ user.usu_id }}"> 
+            
+                    <div class="row">
+            
+                        <div class="input-field col s12 m12 l5">
+                            <input id="first_name" name="first_name" type="text" class="validate" value="{{ user.usu_name_first | capitalize }}"
+                                autocomplete="off">
+                            <label for="first_name">First Name</label>
+            
+                            {{ errorField('first_name') | raw }}
+                        </div>
+                    </div>
+            
+            
+                    <div class="row">
+            
+                        <div class="input-field col s12 m12 l5">
+            
+                            <input id="last_name" name="last_name" type="text" class="validate" value="{{ user.usu_name_last | capitalize }}"
+                                autocomplete="off">
+                            <label for="last_name">Last Name</label>
+            
+                            {{ errorField('last_name') | raw }}
+                        </div>
+                    </div>
+            
+            
+                    <div class="row">
+            
+                        <div class="input-field col s12 m12 l8">
+            
+                            <input id="email" name="email" type="email" class="validate" value="{{ user.usu_email}}" autocomplete="off">
+                            <label for="email">Email</label>
+            
+                            {{ errorField('email') | raw }}
+                        </div>
+                    </div>
+            
+            
+                    <div class="row">
+            
+                        <div class="input-field col s12 m6 l2">
+            
+                            <input id="usu_dt_birth" name="usu_dt_birth" type="text" class="validate" value="{{ user.usu_dt_birth }}"
+                                autocomplete="off">
+                            <label for="usu_dt_birth">Date of Birth <span class="mini-text">MM/DD/YYYY</span></label>
+                        </div>
+            
+                        <div class=" col s12 m6 l2 offset-l1">
+            
+                            <label>Select Gender</label>
+            
+                            <select class="browser-default" id="usu_gender" name="usu_gender">
+                                <option value="F" {% if user.usu_gender=="FEMALE" %} selected="selected" {% endif %}>FEMALE</option>
+                                <option value="M" {% if user.usu_gender=="MALE" %} selected="selected" {% endif %}>MALE</option>
+                            </select>
+                        </div>
+                    </div>
+            
+            
+                    <div class="row">
+            
+                        <div class="input-field col s12 m12 l6">
+            
+                            <input id="user_language" name="user_language" type="text" class="autocomplete" value="{{ user.lan_description }}">
+                            <label for="user_language">Add your Preferred Language</label>
+                        </div>
+                    </div>
+            
+            
+                    <div class="row">
+            
+                        <div class="input-field col s12 m12 l6">
+            
+                            <input id="professional_headline" name="professional_headline" type="text" class="autocomplete" value="{{ user.prof_description }}">
+                            <label for="professional_headline">Add a Professional Headline</label>
+                        </div>
+                    </div>
+
+
+                    <div class="row" style="padding-top:32px;">
+                    
+                        <div class="col l10">
+                    
+                            <span class="grey-text">Add your Skills<span class="mini-text"> Type/Select a Skill (Press Enter)</span></span>
+                            <div class="chips chips-autocomplete" id="chipsSkiills"></div>
+                        </div>
+                    </div>
+
+
+                    <div class="row" style="padding-top:32px;">
+                    
+                        <div class="col l10">
+                    
+                            <span class="grey-text">Add your Course Preferences<span class="mini-text"> Type/Select a Preference (Press Enter)</span></span>
+                            <div class="chips chips-autocomplete" id="chipsPreferences"></div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                    
+                        <div class="input-field col s12 m12 l8">
+                    
+                            <button class="waves-effect waves-light btn gradient-45deg-green-teal z-depth-4 mr-1 right" id="btnRegister"
+                                type="submit">Save Data</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+
+
+
+
+
+            <ul class="collection z-depth-0 gradient-45deg-deep-grey section scrollspy" id="div-account">
+            
+                <h6 class="txt-title green-text">Account - You can Edit your account settings and change your password here.</h6>
+            </ul>
+
+            <div class="row">
+            
+                <form name="FrmAccount" class="col s12 l11 offset-l1" method="POST" action="Profile/SaveAccount">
+            
+                    <input type="hidden" name="usu_id_pw" id="usu_id_pw" value="{{ user.usu_id }}"/>
+            
+           
+                    <div class="row">
+            
+                        <div class="input-field col s12 m12 l5">
+                            <input id="usu_login" name="usu_login" type="text" value="{{ user.usu_login }}" data-id="{{ user.usu_login }}"
+                                autocomplete="off">
+                            <label for="usu_login">Login Info.</label>
+            
+                            <span class="right" id="msg-available"></span>
+                            {{ errorField('email') | raw }}
+                        </div>
+                    </div>
+            
+            
+                    <div class="row">
+            
+                        <div class="input-field col s12 m12 l5">
+                            <input id="usu_cur_password" placeholder="Type your current password" type="password" autocomplete="off"
+                                data-id="{{ user.usu_email}}">
+                            <label for="usu_cur_password">Current Password</label>
+            
+                            <span class="right" id="msg-pass-match"></span>
+                            <span class="right">
+                                <div id="div-hide-button"></div>
+                            </span>
+                        </div>
+                    </div>
+            
+                    <div class="row">
+            
+                        <div class="input-field col s12 m12 l5">
+                            <input disabled id="usu_new_password" placeholder="Enter your new password" type="password"
+                                autocomplete="off">
+                            <label for="usu_new_password">Type new Password</label>
+                        </div>
+                    </div>
+            
+                    <div class="row">
+            
+                        <div class="input-field col s12 m12 l5">
+                            <input disabled id="usu_password" name="usu_password" placeholder="Re-Type new password" type="password"
+                                autocomplete="off">
+                            <label for="usu_password">Re-Type</label>
+                            <span class="right" id="msg-pass-correct"></span>
+                        </div>
+                    </div>
+            
+                    <div class="row">
+            
+                        <div class="input-field col s12 m12 l8">
+            
+                            <button disabled class="waves-effect waves-light btn gradient-45deg-green-teal z-depth-4 mr-1 right" id="btnAccount"
+                                type="submit">Save Data</button>
+                        </div>
+                    </div>            
+                </form>
+            </div>
+
+
+
+
+            <ul class="collection z-depth-0 gradient-45deg-deep-grey section scrollspy" id="div-notifications">
+            
+                <h6 class="txt-title green-text">Notifications - You can Edit see your Notifications and send Notifications from here.</h6>
+            </ul>
+
+
+            <div class="row">
+            
+                <div class="col s12 m12 l12">
+            
+                    <table id="TblMessages" class="responsive-table display dataTable  gradient-45deg-deep-grey" style="width:100%">
+                        <thead>
+                            <tr>
+            
+                                <th width="20%">Type</th>
+                                <th width="30%">Notification</th>
+                                <th class="center" width="15%">Date</th>
+                                <th class="center" width="15%">Status</th>
+                                <th class="center" width="10%"></th>
+                                <th class="center" width="10%"></th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col hide-on-small-only m3 l2">
+    
+        <ul class="section table-of-contents">
+    
+            <li><a href="#div-profile">Profile</a></li>
+            <li><a href="#div-account">Account</a></li>
+            <li><a href="#div-notifications">Notifications</a></li>
+        </ul>
+    </div>
+</div>
+
+
+
+{% endblock %} 
+
+{% block footer %}
+
+    {{ parent() }}
+    
+    <script type="text/javascript" src="{{ site_url() }}/assets/js/Users/user_profile.js"></script>
+{% endblock %}

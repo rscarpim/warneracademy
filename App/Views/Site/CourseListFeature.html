@@ -1,0 +1,26 @@
+
+{% for course in FcoursesFeatured()%}		
+	
+
+	<div class="card grey lighten-3 card-courses">
+		
+		<div class="card-content center">
+
+			<span class="card-title blue-grey-text lighten-4 font-weight-400">Featured Course</span>
+			
+			<a href=""><img src="{{ site_url() }}/{{ course.cour_avatar }}" class="width-40 border-round z-depth-5"></a>
+
+			<h5 class="flow-text white-text">{{ course.cour_name }}</h5>
+		</div>
+
+		<div class="card-action border-non center">
+			
+
+			<a class="waves-effect waves-light btn gradient-45deg-cyan-light-green black-text" href="" title="">Learn More</a>
+		</div>
+	</div>		
+			
+	
+
+
+{% endfor %}

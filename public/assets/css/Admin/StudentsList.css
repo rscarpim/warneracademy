@@ -1,0 +1,41 @@
+ .dataTables_wrapper {
+    font-family: tahoma;
+    font-size: 12px;
+    position: relative;
+    clear: both;
+    *zoom: 1;
+    zoom: 1;
+}
+
+
+.input-field input:focus + label {
+    color: #505763 !important;
+}
+
+.row .input-field input:focus {
+    border-bottom: 1px solid #505763 !important;
+    box-shadow: 0 1px 0 0 #505763 !important
+} 
+ 
+ .btn, .btn-large, .btn-flat {
+    border: none;
+    border-radius: 4px;
+    display: inline-block;
+    height: 26px;
+    line-height: 26px;
+    padding: 0 2rem;
+    text-transform: uppercase;
+    vertical-align: middle;
+    -webkit-tap-highlight-color: transparent;
+} 
+
+.gradient-45deg-amber-amber {
+    background: #ff6f00;
+    background: -webkit-linear-gradient(45deg, #ff6f00 0%, #ffca28 100%);
+    background: linear-gradient(45deg, #ff6f00 0%, #ffca28 100%);
+}
+
+
+#txtTitle{
+    padding-top: 22px;
+}

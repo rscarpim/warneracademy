@@ -1,0 +1,367 @@
+{% extends 'site_dashboard.html' %}
+
+{% block head %}
+
+    {{ parent() }}
+        
+        <link rel="stylesheet" type="text/css" href="{{ site_url() }}/assets/css/Instructors/MyCoursesNew.css">
+
+{% endblock %}
+
+{% block site_content %}
+
+
+
+<div class="container">
+
+
+    <div class="row">
+    
+        <div class="col l12">
+    
+            <h5 class="grey-text right" id="txtTitle">Create a New Course</h5>
+        </div>
+    </div>
+
+
+
+
+    <div class="row">
+
+        <div class="col s12 m12 l12">
+        
+            <div class="row">
+        
+                <ul class="collection z-depth-0 gradient-45deg-deep-grey section scrollspy" id="div-profile">
+        
+                    <h6 class="txt-title green-text"><strong>Course</strong> - Info.</h6>
+                </ul>
+            </div>
+
+
+            <div class="row">
+
+                <form action="MyCoursesNew/store" method="POST" accept-charset="utf-8">
+
+                    <input type="hidden" name="pTpCrud" value="1"/>
+                    <input type="hidden" name="pCourID"  value="0" />
+                    <input type="hidden" name="puserID"  value="{{ FUserData().usu_id }}" />
+
+
+                    <div class="row">
+                    
+                        <div class="input-field col l4">
+                    
+                            <i class="material-icons prefix">featured_play_list</i>
+                            <input id="cour_slug" name="cour_slug" type="text" class="validate" autocomplete="off" value="course-">
+                            <label for="cour_slug">Slug</label>
+                    
+                            {{ errorField('cour_slug') | raw }}
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+
+                        <div class="input-field col l9">
+                        
+                            <i class="material-icons prefix">apps</i>
+                            <input id="cour_title" name="cour_title" type="text" class="validate" autocomplete="off">
+                            <label for="cour_title">Course Title</label>
+                            <span id="msg-span-title-available" class="right"></span>
+
+                            {{ errorField('cour_title') | raw }}
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                    
+                        <div class="input-field col l9">
+                    
+                            <i class="material-icons prefix">apps</i>
+                            <input id="cour_subtitle" name="cour_subtitle" type="text" class="validate" autocomplete="off">
+                            <label for="cour_subtitle">Course Sub-Title</label>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row">
+
+                        <div class="col l3">
+                        
+                            <label>Set the Course Level</label>
+                            <select class="browser-default" id="cour_level" name="cour_level">
+                                <option value="" disabled selected>Choose your option</option>
+                            </select>
+                        </div>
+
+                        <div class="col l3">                            
+                           
+                            <label for="cour_status">Course Status</label>
+                            <select class="browser-default" id="cour_status" name="cour_status">
+                                <option value="" disabled selected>Choose your option</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row">
+                    
+                        <ul class="collection z-depth-0 gradient-45deg-deep-grey section scrollspy" id="div-profile">
+                    
+                            <h6 class="txt-title green-text"><strong>Course</strong> - Category Definition.</h6>
+                        </ul>
+                    </div>
+
+
+
+                    <div class="row">
+                    
+                        <div class="col l8">
+                    
+                            <label>Select Course Category</label>
+                            <select class="browser-default" id="cour_category" name="cour_category">
+                                <option value="" disabled selected>Choose your option</option>
+                            </select>
+
+                            {{ errorField('cour_category') | raw }}
+                        </div>
+
+
+                        <div class="col l4">
+                        
+                            <label>Select Course Sub-Category</label>
+                            <select class="browser-default " id="cour_subcategory" name="cour_subcategory" disabled>
+                                <option value="" disabled selected>Choose your option</option>
+                            </select>
+
+                            {{ errorField('cour_subcategory') | raw }}
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                    
+                        <div class="col l8">
+
+                            <label>Select Course Link</label>
+                            <select class="browser-default " id="cour_link_name" name="cour_link_name" disabled>
+                                <option value="" disabled selected>Choose your option</option>
+                            </select>
+
+                            {{ errorField('cour_link_name') | raw }}
+                        </div>
+
+                        <div class="col l2 button-padding" style="padding-top: 32px;">
+
+                            <button type="button" id="btnAddLink" class="btn gradient-45deg-amber-amber gradient-shadow">Create New Link</button>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                    
+                        <div class="input-field col l8">                    
+                            
+                            <input type="text" id="cour_sublink_name" name="cour_sublink_name">
+                            <label for="cour_sublink_name">New Sub-Link name</label>
+                            <span id="span-msg-available" class="right"></span>
+                        </div>
+
+
+                        <div class="input-field col l3">                        
+                            
+                            <input type="number" id="cour_lectures" name="cour_lectures" class="input-numbers" min="0" max="999" autocomplete="off">
+                            <label for="cour_lectures">Number of Lectures <span class="red-text" style=" font-size: 10px;">
+                                    (Total
+                                    000)</span></label>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row">
+                    
+                        <ul class="collection z-depth-0 gradient-45deg-deep-grey section scrollspy" id="div-profile">
+                    
+                            <h6 class="txt-title green-text"><strong>Course</strong> - Price Definition.</h6>
+                        </ul>
+                    </div>
+
+
+
+                    <div class="row">
+                    
+                        <div class="input-field col l2">
+                    
+                            <i class="material-icons prefix">attach_money</i>
+                            <input type="text" id="cour_price" name="cour_price" class="input-money">
+                            <label for="cour_price">Price</label>
+
+                            {{ errorField('cour_price') | raw }}
+                        </div>
+                    
+                    
+                        <div class="input-field col l2">
+                    
+                            <i class="material-icons prefix">money_off</i>
+                            <input type="number" id="cour_reduced_price_percent" name="cour_reduced_price_percent" class="input-numbers"
+                                min="0" max="999">
+                            <label for="cour_reduced_price_percent">% Reduced <span class="red-text" style="font-size: 10px;">
+                                    (Number 000)</span></label>
+                        </div>
+                    
+                    
+                        <div class="input-field col l2">
+                    
+                            <i class="material-icons prefix">attach_money</i>
+                            <input disabled type="text" id="cour_reduced_price" name="cour_reduced_price" class="input-money">
+                            <label for="cour_reduced_price">Reduced Price</label>
+                        </div>
+                    
+                    
+                        <div class="input-field col l3">
+                    
+                            <i class="class material-icons prefix">date_range</i>
+                            <input type="number" id="cour_promo_expire" name="cour_promo_expire" class="input-numbers" min="0" max="999"
+                                autocomplete="off">
+                            <label for="cour_promo_expire">Reduced Expires <span class="red-text" style="font-size: 10px;">
+                                    (Days
+                                    000)</span></label>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                    
+                        <ul class="collection z-depth-0 gradient-45deg-deep-grey section scrollspy" id="div-profile">
+                    
+                            <h6 class="txt-title green-text"><strong>Course</strong> - Image Definition.</h6>
+                        </ul>
+                    </div>
+
+
+                    <div class="row">
+                    
+                        <div class="col s12 m8 l12">
+                    
+                            <div class="card-panel grey lighten-5 z-depth-1">
+                    
+                                <div class="row valign-wrapper">
+                    
+                                    <div class="col s2">
+                    
+                                        <img id="img-instructor" data-src="{{ site_url() }}/" src="{% if UserData.usu_avatar == '' %} {{ site_url() }}/assets/images/no-image.png {% else %} {{ site_url()}}/assets/images/{{UserData.usu_avatar}} {%endif%}"
+                                            class="circle responsive-img">
+                                    </div>
+                    
+                                    <div class="col s10">
+                    
+                                        <span class="black-text">Add a Cover image for this Course<br />Acceptable formats: <strong>.jpg .jpeg
+                                                .png
+                                                .svg</strong></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="file-field input-field">
+                    
+                            <div class="btn">
+                    
+                                <span>File</span>
+                                <input type="file" id="picture-file" name="cour_img" data-src="{{ site_url() }}/" accept="image/*">
+                            </div>
+                    
+                            <div class="file-path-wrapper">
+                    
+                                <input class="file-path validate" type="text">
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                    
+                        <ul class="collection z-depth-0 gradient-45deg-deep-grey section scrollspy" id="div-profile">
+                    
+                            <h6 class="txt-title green-text"><strong>Course</strong> - General Definition.</h6>
+                        </ul>
+                    </div>
+
+
+
+                    <div class="row">
+                    
+                        <div class="input-field col l11" style="padding-left: 22px;">
+                            <span class="grey-text">Course Description</span>
+                            <textarea id="pCourDescription" name="txtCourseDesc" class="ckeditor" height="300px"></textarea>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="row">
+                    
+                        <div class="input-field col l11" style="padding-left: 22px;">
+                            <span class="grey-text">What Will I Learn?</span>
+                            <textarea id="txtLearnDesc" name="txtLearnDesc" class="ckeditor" height="300px"></textarea>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="row">
+                    
+                        <div class="input-field col l11" style="padding-left: 22px;">
+                            <span class="grey-text">Requirements</span>
+                            <textarea id="txtRequirementDesc" name="txtRequirementDesc" class="ckeditor" height="300px"></textarea>
+                        </div>
+                    </div>
+
+
+
+                    <div class="fixed-action-btn">
+
+                        <button
+                         type="submit" class="btn-floating btn-large red" id="btnSave">
+                            <i class="large material-icons">save</i>
+                        </button>
+                    </div>
+
+
+                    {{ FMessage('saved') | raw }}
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+{% endblock %}
+{% block footer %}
+
+{{ parent() }}
+
+    <script src="{{ site_url() }}/assets/js/Instructors/inst_MyCoursesNew.js"></script>
+
+    <script src="https://cdn.ckeditor.com/4.10.0/standard/ckeditor.js"></script>
+
+    <script type="text/javascript">
+
+        CKEDITOR.replace('txtCourseDesc');
+        CKEDITOR.add
+
+        CKEDITOR.replace('txtLearnDesc');
+        CKEDITOR.add
+
+        CKEDITOR.replace('txtRequirementDesc');
+        CKEDITOR.add
+    </script>
+{% endblock %}
